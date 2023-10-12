@@ -6,3 +6,4 @@ YOLOv8/
 env
 wandb/
 yolov8s.pt
+models/epoch*.pt
