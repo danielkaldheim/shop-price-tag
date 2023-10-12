@@ -1,3 +1,8 @@
 .env
 Price-tags-*
 runs
+.ipynb_checkpoints/
+YOLOv8/
+env
+wandb/
+yolov8s.pt
