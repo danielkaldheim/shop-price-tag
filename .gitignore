@@ -12,3 +12,5 @@ models/epoch*.pt
 _backup/*
 
 models/best.torchscript
+
+datasets/*
