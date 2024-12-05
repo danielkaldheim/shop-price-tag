@@ -5,5 +5,10 @@ runs
 YOLOv8/
 env
 wandb/
-yolov8s.pt
+yolo*.pt
 models/epoch*.pt
+
+.vscode
+_backup/*
+
+models/best.torchscript
