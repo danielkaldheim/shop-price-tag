@@ -14,3 +14,7 @@ _backup/*
 models/best.torchscript
 
 datasets/*
+__pycache__/
+.pytest_cache/
+results.json
+crops/
