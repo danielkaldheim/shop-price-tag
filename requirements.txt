@@ -1,0 +1,13 @@
+ultralytics>=8.4
+roboflow
+python-dotenv
+opencv-python
+# Reference OCR and barcode decoding (ML Kit stands in for these on device)
+rapidocr
+onnxruntime
+zxing-cpp
+# Offline auto-labelling with Grounding DINO
+transformers>=4.51
+torch
+pillow
+pytest
