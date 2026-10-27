@@ -26,13 +26,15 @@ def main() -> None:
 
     if args.platform in ("android", "both"):
         # nms=None keeps raw outputs and lets the plugin run NMS on device.
-        path = Path(YOLO(args.weights).export(format="litert", nms=None, imgsz=args.imgsz))
+        # w8a32 (INT8 weights, FP32 activations) matches the plugin's own
+        # Android assets and needs no calibration data.
+        path = Path(YOLO(args.weights).export(format="litert", nms=None, quantize="w8a32", imgsz=args.imgsz))
         target = args.out / f"{name}.tflite"
         shutil.copy(next(path.rglob("*.tflite")) if path.is_dir() else path, target)
         print("android:", target)
 
     if args.platform in ("ios", "both"):
-        path = Path(YOLO(args.weights).export(format="coreml", nms=True, int8=True, imgsz=args.imgsz))
+        path = Path(YOLO(args.weights).export(format="coreml", nms=True, quantize=8, imgsz=args.imgsz))
         target = args.out / f"{name}.mlpackage"
         shutil.rmtree(target, ignore_errors=True)
         shutil.copytree(path, target)
