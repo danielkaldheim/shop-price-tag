@@ -10,6 +10,7 @@ zxing-cpp so it can run on a laptop over the test folders.
 
 import argparse
 import json
+import sys
 from dataclasses import asdict
 from pathlib import Path
 
@@ -19,6 +20,7 @@ import zxingcpp
 from rapidocr import RapidOCR
 from ultralytics import YOLO
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from shelftag.price_parser import TextBox, parse_tag
 
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png"}
