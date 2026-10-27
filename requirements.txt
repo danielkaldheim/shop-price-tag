@@ -1,4 +1,7 @@
 ultralytics>=8.4
+# coremltools (CoreML export) breaks on numpy > 2.3.5. Pinning it here keeps
+# Ultralytics from swapping numpy mid-export, which fails the first run.
+numpy<=2.3.5
 roboflow
 python-dotenv
 opencv-python
